@@ -1,0 +1,209 @@
+[
+    {
+        "parent_details": {
+            "father": {
+                "name": "Emily's Father",
+                "phone": "1234567899",
+                "mail": "father@example.com"
+            },
+            "mother": {
+                "name": "Emily's Mother",
+                "phone": "1234567898",
+                "mail": "mother@example.com"
+            }
+        },
+        "name": "Emily",
+        "family_name": "Smith",
+        "phone": "1234567890",
+        "mail": "emily.smith@example.com",
+        "grade": 10,
+        "school": "XYZ School",
+        "subjects": [
+            "Physics"
+        ],
+        "timetable": [
+            {
+                "day": "Tuesday",
+                "start": "14:00",
+                "end": "15:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-18T04:00:00.000Z",
+                        "notes": "Participated in class discussion"
+                    }
+                ]
+            },
+            {
+                "day": "Thursday",
+                "start": "10:00",
+                "end": "11:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-20T04:00:00.000Z",
+                        "notes": "Studied Physics"
+                    }
+                ]
+            }
+        ],
+        "fee": 60,
+        "address": "789 Elm Street",
+        "__v": 0
+    },
+    {
+        "parent_details": {
+            "father": {
+                "name": "Michael's Father",
+                "phone": "5551234566",
+                "mail": "father@example.com"
+            },
+            "mother": {
+                "name": "Michael's Mother",
+                "phone": "5551234565",
+                "mail": "mother@example.com"
+            }
+        },
+        "name": "Michael",
+        "family_name": "Johnson",
+        "phone": "5551234567",
+        "mail": "michael.johnson@example.com",
+        "grade": 11,
+        "school": "PQR School",
+        "subjects": [
+            "Physics"
+        ],
+        "timetable": [
+            {
+                "day": "Monday",
+                "start": "13:00",
+                "end": "14:00",
+                "hours": 1,
+                "days_present": []
+            },
+            {
+                "day": "Wednesday",
+                "start": "15:00",
+                "end": "16:00",
+                "hours": 1,
+                "days_present": []
+            }
+        ],
+        "fee": 70,
+        "address": "123 Oak Street",
+        "__v": 0
+    },
+    {
+        "parent_details": {
+            "father": {
+                "name": "Sophia's Father",
+                "phone": "1112223332",
+                "mail": "father@example.com"
+            },
+            "mother": {
+                "name": "Sophia's Mother",
+                "phone": "1112223331",
+                "mail": "mother@example.com"
+            }
+        },
+        "name": "Sophia",
+        "family_name": "Williams",
+        "phone": "1112223333",
+        "mail": "sophia.williams@example.com",
+        "grade": 12,
+        "school": "LMN School",
+        "subjects": [
+            "Mathematics"
+        ],
+        "timetable": [
+            {
+                "day": "Tuesday",
+                "start": "9:00",
+                "end": "10:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-11T04:00:00.000Z",
+                        "notes": "Completed lab experiment"
+                    },
+                    {
+                        "date": "2023-07-18T04:00:00.000Z",
+                        "notes": "Studied something"
+                    }
+                ]
+            },
+            {
+                "day": "Thursday",
+                "start": "13:00",
+                "end": "14:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-13T04:00:00.000Z",
+                        "notes": "Reviewed study materials"
+                    },
+                    {
+                        "date": "2023-07-20T04:00:00.000Z",
+                        "notes": "Prepared for presentation"
+                    }
+                ]
+            }
+        ],
+        "fee": 80,
+        "address": "987 Pine Street",
+        "__v": 0
+    },
+    {
+        "parent_details": {
+            "father": {
+                "name": "Oliver's Father",
+                "phone": "4445556662",
+                "mail": "father@example.com"
+            },
+            "mother": {
+                "name": "Oliver's Mother",
+                "phone": "4445556661",
+                "mail": "mother@example.com"
+            }
+        },
+        "name": "Oliver",
+        "family_name": "Brown",
+        "phone": "4445556666",
+        "mail": "oliver.brown@example.com",
+        "grade": 9,
+        "school": "QRS School",
+        "subjects": [
+            "Mathematics",
+            "Physics"
+        ],
+        "timetable": [
+            {
+                "day": "Monday",
+                "start": "16:00",
+                "end": "17:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-17T04:00:00.000Z",
+                        "notes": "Submitted assignment"
+                    }
+                ]
+            },
+            {
+                "day": "Wednesday",
+                "start": "9:00",
+                "end": "10:00",
+                "hours": 1,
+                "days_present": [
+                    {
+                        "date": "2023-07-19T04:00:00.000Z",
+                        "notes": "Participated in group project"
+                    }
+                ]
+            }
+        ],
+        "fee": 55,
+        "address": "321 Maple Street",
+        "__v": 0
+    }
+]
