@@ -83,7 +83,7 @@ const Billing = () => {
           <Select
             value={billingMonth}
             variant="standard"
-            label="Select Day"
+            label="Select Month"
             onChange={(value) => setbillingMonth(value)}
           >
             {months.map((month) => (

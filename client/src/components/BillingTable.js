@@ -36,7 +36,9 @@ const BillingTable = (props) => {
             student.timetable.map((timetable) =>
               timetable.days_present.map((day_present) =>
                 months[new Date(day_present.date).getMonth()] ===
-                billingMonth ? (
+                  billingMonth &&
+                new Date(day_present.date).getFullYear() ===
+                  new Date().getFullYear() ? (
                   <tr className={"bg-white border-b "}>
                     <th className="px-6 py-4 font-medium text-gray-900">
                       {convertDate(day_present.date, timetable)}
