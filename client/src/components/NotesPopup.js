@@ -6,6 +6,7 @@ const NotesPopup = (props) => {
   const student = props.student;
   const students = props.students;
   const date = props.date;
+  const user = props.user;
   const setStudents = props.setStudents;
   const timetable = props.timetable;
   const [notes, setNotes] = useState(null);
@@ -39,7 +40,14 @@ const NotesPopup = (props) => {
               className="px-4 py-2 bg-blue-500 text-white rounded"
               onClick={async () => {
                 setStudents(
-                  await updateNotes(timetable, student, students, date, notes)
+                  await updateNotes(
+                    timetable,
+                    student,
+                    students,
+                    date,
+                    notes,
+                    user
+                  )
                 );
                 close();
               }}

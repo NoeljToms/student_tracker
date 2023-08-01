@@ -8,6 +8,7 @@ import NotesPopup from "./NotesPopup";
 const StudentTable = (props) => {
   const students = props.students;
   const date = props.date;
+  const user = props.user;
   if (date !== null) date.setHours(0, 0, 0, 0);
   const setStudents = props.setStudents;
 
@@ -66,6 +67,7 @@ const StudentTable = (props) => {
                             date={date}
                             setStudents={setStudents}
                             timetable={timetable}
+                            user={user}
                           />
                         ) : (
                           <p title="Student must be present first">Notes</p>
@@ -79,7 +81,8 @@ const StudentTable = (props) => {
                                 timetable,
                                 student,
                                 students,
-                                date
+                                date,
+                                user
                               )
                             )
                           }

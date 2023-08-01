@@ -98,7 +98,7 @@ const NewStudent = () => {
       address: address,
       parent_details: parent_details,
     };
-    const response = await fetch("http://localhost:4000/api/students", {
+    const response = await fetch("/api/students", {
       method: "POST",
       body: JSON.stringify(student),
       headers: {

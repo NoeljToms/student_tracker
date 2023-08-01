@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Select, Option } from "@material-tailwind/react";
 import BillingTable from "../components/BillingTable";
 import BillingAllStudentsTable from "../components/BillingAllStudentsTable";
+import { useAuthContext } from "../hooks/useAuthContext";
 import { months } from "../utils.js";
 
 const Billing = () => {
@@ -12,10 +13,13 @@ const Billing = () => {
   const [billingMonth, setbillingMonth] = useState(
     months[new Date().getMonth()]
   );
+  const { user } = useAuthContext();
 
   useEffect(() => {
     async function getAllStudents() {
-      const response = await fetch("http://localhost:4000/api/students");
+      const response = await fetch("api/students", {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       const json = await response.json();
 
       if (response.ok) {

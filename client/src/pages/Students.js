@@ -1,13 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const Students = () => {
   const [students, setStudents] = useState(null);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await fetch("http://localhost:4000/api/students");
+      const response = await fetch("api/students", {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       const json = await response.json();
 
       if (response.ok) {

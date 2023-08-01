@@ -17,9 +17,7 @@ const Home = () => {
     const getTodayStudents = async () => {
       if (date) {
         const response = await fetch(
-          `http://localhost:4000/api/students/filter/${
-            daysOfTheWeek[date.getDay()]
-          }`,
+          `api/students/filter/${daysOfTheWeek[date.getDay()]}`,
           {
             headers: { Authorization: `Bearer ${user.token}` },
           }
@@ -65,6 +63,7 @@ const Home = () => {
           students={students}
           setStudents={setStudents}
           date={date}
+          user={user}
         />
       )}
     </div>

@@ -37,7 +37,7 @@ const formatDate = (day, startTime, endTime) => {
   return `${day}: ${formatTime(startTime)} - ${formatTime(endTime)}`;
 };
 
-const updateDaysPresent = async (timetable, student, students, date) => {
+const updateDaysPresent = async (timetable, student, students, date, user) => {
   let updatedTimetable = [];
   console.log(timetable);
   const updated_students = students.map((oldStudent) => {
@@ -69,16 +69,14 @@ const updateDaysPresent = async (timetable, student, students, date) => {
 
   console.log(updated_students);
 
-  const response = await fetch(
-    `http://localhost:4000/api/students/${student._id}`,
-    {
-      method: "PATCH",
-      body: JSON.stringify({ timetable: updatedTimetable }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const response = await fetch(`api/students/${student._id}`, {
+    method: "PATCH",
+    body: JSON.stringify({ timetable: updatedTimetable }),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
+    },
+  });
   const json = response.json();
 
   if (!response.ok) {
@@ -89,7 +87,7 @@ const updateDaysPresent = async (timetable, student, students, date) => {
   return updated_students;
 };
 
-const updateNotes = async (timetable, student, students, date, notes) => {
+const updateNotes = async (timetable, student, students, date, notes, user) => {
   let updatedTimetable = [];
   const updated_students = students.map((oldStudent) => {
     if (oldStudent._id === student._id) {
@@ -109,18 +107,16 @@ const updateNotes = async (timetable, student, students, date, notes) => {
   console.log(updatedTimetable, notes);
   console.log(updated_students);
 
-  const response = await fetch(
-    `http://localhost:4000/api/students/${student._id}`,
-    {
-      method: "PATCH",
-      body: JSON.stringify({
-        timetable: updatedTimetable,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  );
+  const response = await fetch(`api/students/${student._id}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      timetable: updatedTimetable,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
+    },
+  });
   const json = response.json();
 
   if (!response.ok) {

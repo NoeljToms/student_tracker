@@ -2,15 +2,19 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { formatDate } from "../utils.js";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 const StudentInfo = () => {
   const [student, setStudent] = useState(null);
   const { id } = useParams();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     console.log(id);
     const getStudent = async () => {
-      const response = await fetch(`http://localhost:4000/api/students/${id}`);
+      const response = await fetch(`api/students/${id}`, {
+        headers: { Authorization: `Bearer ${user.token}` },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -113,7 +117,7 @@ const StudentInfo = () => {
         </div>
       )}
       {/* Button */}
-      <div className=" text-right">
+      {/* <div className=" text-right">
         <button
           type="button"
           className="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-full text-md px-5 py-2.5 text-center justify-end"
@@ -122,7 +126,7 @@ const StudentInfo = () => {
             <Link to={`/editstudent/${student._id}`}>Edit Student</Link>
           )}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
