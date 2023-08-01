@@ -3,6 +3,7 @@ import DatePicker from "react-date-picker";
 import { useState, useEffect } from "react";
 import StudentTable from "../components/StudentTable";
 import { daysOfTheWeek, months } from "../utils.js";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 import "react-date-picker/dist/DatePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -10,6 +11,7 @@ import "react-calendar/dist/Calendar.css";
 const Home = () => {
   const [date, setDate] = useState(new Date());
   const [students, setStudents] = useState(null);
+  const { user } = useAuthContext();
 
   useEffect(() => {
     const getTodayStudents = async () => {
@@ -17,7 +19,10 @@ const Home = () => {
         const response = await fetch(
           `http://localhost:4000/api/students/filter/${
             daysOfTheWeek[date.getDay()]
-          }`
+          }`,
+          {
+            headers: { Authorization: `Bearer ${user.token}` },
+          }
         );
         const json = await response.json();
 
@@ -27,7 +32,9 @@ const Home = () => {
       }
     };
 
-    getTodayStudents();
+    if (user) {
+      getTodayStudents();
+    }
   }, [date]);
 
   return (

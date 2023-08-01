@@ -6,6 +6,8 @@ import Navbar from './components/Navbar.js';
 import NewStudent from './pages/NewStudent.js';
 import EditStudent from './pages/EditStudent.js';
 import Billing from './pages/Billing.js';
+import Signup from './pages/Signup.js';
+import Login from './pages/Login.js';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path='/newstudent' element={<NewStudent />} />
         <Route path='/billing' element={<Billing/>} />
         <Route path='/editstudent/:id' element={<EditStudent/>} />
+        <Route path='/register' element={<Signup/>} />
+        <Route path='/signin' element={<Login/>} />
       </Routes>
     </div>
   );

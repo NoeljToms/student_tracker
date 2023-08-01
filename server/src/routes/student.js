@@ -1,8 +1,19 @@
-import express from 'express';
-import { createStudent, getStudents, getStudentById, deleteStudent, updateStudent, getStudentByDay } from '../controllers/studentController.js';
+import express from "express";
+import {
+  createStudent,
+  getStudents,
+  getStudentById,
+  deleteStudent,
+  updateStudent,
+  getStudentByDay,
+} from "../controllers/studentController.js";
+import { requireAuth } from "../middleware/requireAuth.js";
 
 //router
 const router = express.Router();
+
+//Authenticate before executing paths
+router.use(requireAuth);
 
 //get all students
 router.get("/", getStudents);
@@ -21,6 +32,5 @@ router.delete("/:id", deleteStudent);
 
 //update a student
 router.patch("/:id", updateStudent);
-
 
 export { router as studentRoutes };
