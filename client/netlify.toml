@@ -1,5 +1,4 @@
 [[redirects]]
-from = "https://main--tutortrackingapp.netlify.app/*"
-to = "https://tutor-app-bryp.onrender.com/:splat"
-status = 302
-force = true
+from = "api/*"
+to = "https://tutor-app-bryp.onrender.com/api/:splat"
+status = 200
