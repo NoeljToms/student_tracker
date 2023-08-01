@@ -1,1 +1,2 @@
-/main--tutortrackingapp.netlify.app /tutor-app-bryp.onrender.com
+# This will redirect all paths under /jobs except the path above
+/main--tutortrackingapp.netlify.app/*                        /tutor-app-bryp.onrender.com/:splat
