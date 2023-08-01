@@ -1,4 +1,3 @@
 # This will redirect all paths under /jobs except the path above
-/main--tutortrackingapp.netlify.app/*                        /tutor-app-bryp.onrender.com/:splat
-/* https://yoia-apis.onrender.com/api/:splat 200
+/* https://tutor-app-bryp.onrender.com/:splat 200
 /* /index.html 200
