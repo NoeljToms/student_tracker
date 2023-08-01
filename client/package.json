@@ -1,6 +1,6 @@
 {
   "name": "student_tracker",
-  "proxy": "https://student-tracker-noeljtoms.vercel.app/",
+  "proxy": "https://tutor-app-bryp.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
