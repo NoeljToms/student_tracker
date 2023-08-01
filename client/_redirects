@@ -1,3 +1,0 @@
-# This will redirect all paths under /jobs except the path above
-/* https://tutor-app-bryp.onrender.com/:splat 200
-/* /index.html 200
