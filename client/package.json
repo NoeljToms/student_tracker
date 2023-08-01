@@ -1,6 +1,5 @@
 {
   "name": "student_tracker",
-  "proxy": "https://student-tracker-noeljtoms.vercel.app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
