@@ -22,8 +22,8 @@ const Signup = () => {
     }
   }, [formSubmitted, isLoading, error, navigate]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     setFormSubmitted(true); // Mark the form as submitted
     await signup(email, password);
   };
