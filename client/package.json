@@ -1,6 +1,6 @@
 {
   "name": "student_tracker",
-  "proxy": "https://tutor-app-bryp.onrender.com/",
+  "proxy": "https://tutor-app-k5e2.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

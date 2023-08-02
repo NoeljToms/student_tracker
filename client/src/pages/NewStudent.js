@@ -98,7 +98,7 @@ const NewStudent = () => {
       address: address,
       parent_details: parent_details,
     };
-    const response = await fetch("/api/students", {
+    const response = await fetch("https://tutor-app-k5e2.onrender.com/api/students", {
       method: "POST",
       body: JSON.stringify(student),
       headers: {

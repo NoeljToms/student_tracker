@@ -17,7 +17,7 @@ const Home = () => {
     const getTodayStudents = async () => {
       if (date) {
         const response = await fetch(
-          `api/students/filter/${daysOfTheWeek[date.getDay()]}`,
+          `https://tutor-app-k5e2.onrender.com/api/students/filter/${daysOfTheWeek[date.getDay()]}`,
           {
             headers: { Authorization: `Bearer ${user.token}` },
           }

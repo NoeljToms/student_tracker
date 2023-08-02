@@ -9,7 +9,7 @@ const Students = () => {
 
   useEffect(() => {
     const fetchStudents = async () => {
-      const response = await fetch("api/students", {
+      const response = await fetch("https://tutor-app-k5e2.onrender.com/api/students", {
         headers: { Authorization: `Bearer ${user.token}` },
       });
       const json = await response.json();

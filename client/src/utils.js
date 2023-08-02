@@ -69,7 +69,7 @@ const updateDaysPresent = async (timetable, student, students, date, user) => {
 
   console.log(updated_students);
 
-  const response = await fetch(`api/students/${student._id}`, {
+  const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${student._id}`, {
     method: "PATCH",
     body: JSON.stringify({ timetable: updatedTimetable }),
     headers: {
@@ -107,7 +107,7 @@ const updateNotes = async (timetable, student, students, date, notes, user) => {
   console.log(updatedTimetable, notes);
   console.log(updated_students);
 
-  const response = await fetch(`api/students/${student._id}`, {
+  const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${student._id}`, {
     method: "PATCH",
     body: JSON.stringify({
       timetable: updatedTimetable,
