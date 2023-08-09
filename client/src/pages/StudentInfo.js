@@ -12,9 +12,12 @@ const StudentInfo = () => {
   useEffect(() => {
     console.log(id);
     const getStudent = async () => {
-      const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${id}`, {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API}/api/students/${id}`,
+        {
+          headers: { Authorization: `Bearer ${user.token}` },
+        }
+      );
       const json = await response.json();
 
       if (response.ok) {
