@@ -19,10 +19,11 @@ function App() {
   const { logout } = useLogout();
 
   useEffect(() => {
-    const tokenExpired = user ? checkTokenExpiration(user.token) : true
+    const tokenExpired = user ? checkTokenExpiration(user.token) : false
 
     if (tokenExpired) {
       // Token has expired, clear token and redirect to login
+      console.log("token expired")
       logout()
     }
 
