@@ -20,31 +20,28 @@ const Navbar = () => {
       </div>
       {/* menu */}
       <div className="">
-        <ul className="flex">
-          <Link to="/">
-            <li className="px-4">Home</li>
-          </Link>
-          <Link to="/students">
-            <li className="px-4">Students</li>
-          </Link>
-          <Link to="/billing">
-            <li className="px-4">Billing</li>
-          </Link>
-          {!user && (
-            <div>
-              <Link to="/register">
-                <li className="px-4">SignUp</li>
-              </Link>
-            </div>
-          )}
-        </ul>
+        {user && (
+          <ul className="flex">
+            <Link to="/">
+              <li className="px-4">Home</li>
+            </Link>
+            <Link to="/students">
+              <li className="px-4">Students</li>
+            </Link>
+            <Link to="/billing">
+              <li className="px-4">Billing</li>
+            </Link>
+            <li onClick={handleClick}>Log Out</li>
+          </ul>
+        )}
+        {!user && (
+          <ul>
+            <Link to="/register">
+              <li className="px-4">SignUp/Login</li>
+            </Link>
+          </ul>
+        )}
       </div>
-      {user && (
-        <div>
-          <button onClick={handleClick}>Log Out</button>
-        </div>
-      )}
-
       {/* Hamburger menu */}
     </div>
   );

@@ -46,7 +46,9 @@ const BillingTable = (props) => {
                     <td className="px-6 py-4 text-center">
                       {day_present.notes}
                     </td>
-                    <td className="px-6 py-4 text-center">${student.fee}</td>
+                    <td className="px-6 py-4 text-center">
+                      ${student.fee * timetable.hours}
+                    </td>
                   </tr>
                 ) : null
               )

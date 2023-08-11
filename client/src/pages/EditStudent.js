@@ -45,7 +45,9 @@ const NewStudent = () => {
 
   useEffect(() => {
     const getStudent = async () => {
-      const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${id}`);
+      const response = await fetch(
+        `${process.env.REACT_APP_API}/api/students/${id}`
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -128,7 +130,7 @@ const NewStudent = () => {
       address: address,
       parent_details: parent_details,
     };
-    const response = await fetch("https://tutor-app-k5e2.onrender.com/api/students", {
+    const response = await fetch(`${process.env.REACT_APP_API}/api/students`, {
       method: "POST",
       body: JSON.stringify(student),
       headers: {

@@ -17,9 +17,12 @@ const Billing = () => {
 
   useEffect(() => {
     async function getAllStudents() {
-      const response = await fetch("https://tutor-app-k5e2.onrender.com/api/students", {
-        headers: { Authorization: `Bearer ${user.token}` },
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API}/api/students`,
+        {
+          headers: { Authorization: `Bearer ${user.token}` },
+        }
+      );
       const json = await response.json();
 
       if (response.ok) {
@@ -51,6 +54,7 @@ const Billing = () => {
     student.timetable.forEach((timetable) => {
       timetable.days_present.forEach((day_present) => {
         if (months[new Date(day_present.date).getMonth()] === billingMonth) {
+          console.log(months[new Date(day_present.date).getMonth()]);
           hours += timetable.hours;
         }
       });

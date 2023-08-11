@@ -69,14 +69,17 @@ const updateDaysPresent = async (timetable, student, students, date, user) => {
 
   console.log(updated_students);
 
-  const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${student._id}`, {
-    method: "PATCH",
-    body: JSON.stringify({ timetable: updatedTimetable }),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${user.token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API}/api/students/${student._id}`,
+    {
+      method: "PATCH",
+      body: JSON.stringify({ timetable: updatedTimetable }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    }
+  );
   const json = response.json();
 
   if (!response.ok) {
@@ -107,16 +110,19 @@ const updateNotes = async (timetable, student, students, date, notes, user) => {
   console.log(updatedTimetable, notes);
   console.log(updated_students);
 
-  const response = await fetch(`https://tutor-app-k5e2.onrender.com/api/students/${student._id}`, {
-    method: "PATCH",
-    body: JSON.stringify({
-      timetable: updatedTimetable,
-    }),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${user.token}`,
-    },
-  });
+  const response = await fetch(
+    `${process.env.REACT_APP_API}/api/students/${student._id}`,
+    {
+      method: "PATCH",
+      body: JSON.stringify({
+        timetable: updatedTimetable,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    }
+  );
   const json = response.json();
 
   if (!response.ok) {
