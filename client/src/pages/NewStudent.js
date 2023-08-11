@@ -16,6 +16,7 @@ import TimePicker from "react-time-picker";
 import { useState } from "react";
 import { formatDate } from "../utils.js";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "../hooks/useAuthContext.js";
 
 import "react-time-picker/dist/TimePicker.css";
 import "react-clock/dist/Clock.css";
@@ -44,6 +45,7 @@ const NewStudent = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
+  const { user } = useAuthContext();
 
   useEffect(() => {
     if (startTime !== null && endTime !== null && day !== null) {
@@ -109,6 +111,7 @@ const NewStudent = () => {
       body: JSON.stringify(student),
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
       },
     });
 
