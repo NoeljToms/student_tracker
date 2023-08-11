@@ -15,6 +15,7 @@ import { TrashIcon } from "@heroicons/react/24/solid";
 import TimePicker from "react-time-picker";
 import { useState } from "react";
 import { formatDate } from "../utils.js";
+import { useNavigate } from "react-router-dom";
 
 import "react-time-picker/dist/TimePicker.css";
 import "react-clock/dist/Clock.css";
@@ -40,6 +41,9 @@ const NewStudent = () => {
   const [mother, setMother] = useState(null);
   const [motherPhone, setMotherPhone] = useState(null);
   const [motherEmail, setMotherEmail] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (startTime !== null && endTime !== null && day !== null) {
@@ -98,6 +102,8 @@ const NewStudent = () => {
       address: address,
       parent_details: parent_details,
     };
+
+    setIsLoading(true);
     const response = await fetch(`${process.env.REACT_APP_API}/api/students`, {
       method: "POST",
       body: JSON.stringify(student),
@@ -111,7 +117,9 @@ const NewStudent = () => {
     if (!response.ok) {
       console.log(json.error);
     } else {
-      console.log("Created new workout");
+      console.log("Created new student");
+      setIsLoading(false);
+      navigate("/students");
     }
   };
 
@@ -387,6 +395,7 @@ const NewStudent = () => {
         <button
           onClick={() => handleSubmit()}
           type="submit"
+          disabled={isLoading}
           className="mt-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
           Submit
