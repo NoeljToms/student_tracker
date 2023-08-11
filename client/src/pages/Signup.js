@@ -48,7 +48,7 @@ const Signup = () => {
             className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96"
             onSubmit={handleSubmit}
           >
-            <div className="mb-4 flex flex-col gap-6">
+            <div className=" flex flex-col gap-6">
               <Input
                 size="lg"
                 label="Email"
@@ -63,6 +63,12 @@ const Signup = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
               />
+            </div>
+            <div className=" px-1 mt- mb-4">
+              <p className=" text-[14px] text-[#888]">
+                Minimum requirements: 8 characters, 1 special character, 1
+                number
+              </p>
             </div>
             {error && (
               <Alert color="red" variant="gradient">

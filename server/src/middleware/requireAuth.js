@@ -13,8 +13,11 @@ const requireAuth = async (req, res, next) => {
 
   try {
     const { _id } = jwt.verify(token, process.env.SECRET);
-    if (_id === "64c839f9f20f190b768cca36") {
-      req.user = await User.findOne({ _id }).select("_id");
+    req.user = await User.findOne({ _id }).select("email");
+    if (
+      req.user.email === "admin@gmail.com" ||
+      req.user.email === "singhrajsingh@hotmail.com"
+    ) {
       next();
     }
   } catch (error) {
